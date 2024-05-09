@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Backbar from "./Backbar";
 
 const AnimeItem = () => {
 	const { id } = useParams();
@@ -56,6 +57,7 @@ const AnimeItem = () => {
 
 	return (
 		<div>
+			<Backbar />
 			<h1 className="text-3xl font-bold mt-[2rem] ml-[4rem]">{title}</h1>
 			<div className="mx-16 my-[2rem] bg-red-100 flex flex-col justify-center content-center text-center rounded-lg">
 				<div className="flex flex-col sm:flex-row content-center justify-evenly my-[4rem]">
