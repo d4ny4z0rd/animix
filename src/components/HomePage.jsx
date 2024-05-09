@@ -11,6 +11,9 @@ const HomePage = () => {
 		handleChange,
 		getUpcomingAnime,
 		getAiringAnime,
+		page,
+		handleSetPage,
+		setPage,
 	} = useGlobalContext();
 
 	const [rendered, setRendered] = useState("popular");
@@ -27,6 +30,10 @@ const HomePage = () => {
 				return <Popular rendered={rendered} />;
 		}
 	};
+
+	function handlePrevPage() {
+		if (page - 1 > 0) setPage(page - 1);
+	}
 
 	return (
 		<>
@@ -90,6 +97,15 @@ const HomePage = () => {
 					</div>
 				</header>
 				{switchComponent()}
+				<div className="p-[1rem] my-[1rem] flex justify-evenly">
+					<div onClick={handlePrevPage}>
+						<i className="fa-solid fa-arrow-left"></i>
+					</div>
+					<div>{page}</div>
+					<div onClick={handleSetPage}>
+						<i className="fa-solid fa-arrow-right"></i>
+					</div>
+				</div>
 			</div>
 		</>
 	);
