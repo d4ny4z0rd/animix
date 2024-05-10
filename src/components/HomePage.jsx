@@ -98,11 +98,15 @@ const HomePage = () => {
 				</header>
 				{switchComponent()}
 				<div className="p-[1rem] my-[1rem] flex justify-evenly">
-					<div onClick={handlePrevPage} className="cursor-pointer">
+					<div
+						onClick={handlePrevPage}
+						className="cursor-pointer text-blue-500 text-xl">
 						<i className="fa-solid fa-arrow-left"></i>
 					</div>
-					<div>{page}</div>
-					<div onClick={handleSetPage} className="cursor-pointer">
+					<div className="text-2xl text-blue-500">{page}</div>
+					<div
+						onClick={handleSetPage}
+						className="cursor-pointer text-blue-500 text-xl">
 						<i className="fa-solid fa-arrow-right"></i>
 					</div>
 				</div>
